@@ -8,16 +8,16 @@ $(document).on('ready', function() {
     var moves = [];
     $(playerClass).each(function(index) {
       // Extract the number from each <td> element with class 'x' and append it to the moves array for X player
-      xMoves.push(parseInt($(this).attr('class').split(' ')[0]));
+      moves.push(parseInt($(this).attr('class').split(' ')[0]));
     });
 
     for (var i = 0; i < winningCombos.length; i++) {
       var combo = winningCombos[i];
       var matching = 0;
 
-      // Check if xPlayer has a winning combo
+      // Check if player has a winning combo
       for (var j = 0; j < combo.length; j++) {
-        if (xMoves.includes(combo[j])) {
+        if (moves.includes(combo[j])) {
           matching++;
         }
       }
